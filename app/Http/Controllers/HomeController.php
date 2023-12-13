@@ -13,7 +13,10 @@ class HomeController extends Controller
         return 'about us';
     }
     public function contact(){
-        return  ('ristika26@gmail.com');
+        return  ('Nama : Riska Agustin <br> Nim : D212011026 <br> Kelas : KA7B <br> Email : ristika26@gmail.com');
+    }
+    public function produk(){
+    return view('home.index');
     }
     
 }

@@ -20,3 +20,4 @@ Route::get('About/', [HomeController::class,'About']);
 
 Route::get('Contact/', [HomeController::class,'Contact']);
 
+Route::get('Index', [HomeController::class, 'produk']);
