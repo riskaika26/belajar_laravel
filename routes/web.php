@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +22,12 @@ Route::get('About/', [HomeController::class,'About']);
 
 Route::get('Contact/', [HomeController::class,'Contact']);
 
-Route::get('Index', [HomeController::class, 'produk']);
+Route::resource('mahasiswa',HomeController::class);
+
+Route::resource("student", StudentController::class);
+
+Route::get('/login', [AuthController::class, 'index'])->name('auth.login');
+
+Route::get('/', function () {
+    return redirect(route('auth.login'));
+});

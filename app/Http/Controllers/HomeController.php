@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use App\Models\Mahasiswa;
+use illuminate\Http\Request;
+use illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -15,8 +18,12 @@ class HomeController extends Controller
     public function contact(){
         return  ('Nama : Riska Agustin <br> Nim : D212011026 <br> Kelas : KA7B <br> Email : ristika26@gmail.com');
     }
-    public function produk(){
-    return view('home.index');
-    }
     
+    
+public function index()
+{
+    //
+    $data = DB::table('mahasiswa')->get();
+        return view("mahasiswas.index")->with('data',$data);
+}
 }
